@@ -1,0 +1,27 @@
+node_name: sentryhive-01
+data_dir: ./data
+
+services:
+  ssh:
+    enabled: true
+    listen_addr: "0.0.0.0:2222"
+    banner: "SSH-2.0-OpenSSH_9.6p1 Ubuntu-3"
+  http:
+    enabled: true
+    listen_addr: "0.0.0.0:8080"
+    persona: router-admin
+  telnet:
+    enabled: true
+    listen_addr: "0.0.0.0:2323"
+  ftp:
+    enabled: true
+    listen_addr: "0.0.0.0:2121"
+
+geoip:
+  provider: ip-api   # or "mmdb" if you supply a local GeoLite2 database
+  mmdb_path: ""
+
+alerting:
+  webhook_url: ""     # Slack/Discord-compatible incoming webhook URL, optional
+  min_severity: medium
+  dedupe_window_sec: 300

@@ -1,0 +1,20 @@
+[Unit]
+Description=sentryhive multi-protocol honeypot
+After=network.target
+
+[Service]
+Type=simple
+User=sentryhive
+Group=sentryhive
+WorkingDirectory=/opt/sentryhive
+ExecStart=/opt/sentryhive/sentryhive -config /opt/sentryhive/config.yaml
+Restart=on-failure
+RestartSec=5
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/sentryhive/data
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
