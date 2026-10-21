@@ -1,5 +1,7 @@
 # sentryhive
 
+[![CI](https://github.com/KelvinNgeno/sentryhive/actions/workflows/ci.yml/badge.svg)](https://github.com/KelvinNgeno/sentryhive/actions)
+
 A multi-protocol honeypot written in Go. It runs decoy SSH, HTTP, Telnet,
 and FTP services, logs every connection attempt (source IP, rough geo
 location, credentials tried, a basic client fingerprint), and can push
